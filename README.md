@@ -1,8 +1,8 @@
-# learn (OpenCode + Obsidian)
+# learn (OpenCode + Antigravity + Obsidian)
 
 [![video](assets/thumbnail.png)](https://www.youtube.com/watch?v=kzcI5F4tGiU)
 
-An AI learning system based on the principles from Amos Blomqvist's video [How I Use AI to Learn Things](https://www.youtube.com/watch?v=kzcI5F4tGiU), re-engineered for **[OpenCode](https://opencode.ai)** and **[Obsidian](https://obsidian.md)**.
+An AI learning system based on the principles from Amos Blomqvist's video [How I Use AI to Learn Things](https://www.youtube.com/watch?v=kzcI5F4tGiU), engineered for **[OpenCode](https://opencode.ai)** and **Google Antigravity (`agy`)** with live **[Obsidian](https://obsidian.md)** note-taking.
 
 Rather than giving you memorized facts or passive summaries, this system acts as a rigorous personal tutor. It maps the frontier of your current understanding, derives new knowledge from unconditional ground truths, and mirrors every lesson live into an Obsidian note with native LaTeX math, callouts, and verified diagrams.
 
@@ -15,10 +15,10 @@ Rather than giving you memorized facts or passive summaries, this system acts as
   - **Principle 2 — Motivated discovery:** Answers *"how could I have discovered this?"* (3Blue1Brown style), moving from tension to formulation.
   - **3-Phase Workflow:** Binary-search **Probe** $\to$ DAG Dependency **Plan** $\to$ Node-by-node **Teach** loop.
   - **Live Dependency Progress Sync:** Real-time visual tracking on the Mermaid DAG as nodes are mastered (green `[✓]` for done, amber `[▶]` for active).
-- **OpenCode Native Question Modal**:
-  - Interactive terminal choices for knowledge probes, diagnostic quizzes, and goal branching.
-  - Quizzes feature parallel bare-claim options, an explicit *"I don't know"* button, and immediate feedback.
-- **Subagents (`.opencode/agents/`)**:
+- **Interactive Question Modals (OpenCode & AGY)**:
+  - Supports both OpenCode's `question` tool and Antigravity's `ask_question` tool.
+  - **Strict Anti-Spoiler Guardrail:** Zero `(Recommended)` labels—questions feature parallel bare-claim options, an explicit *"I don't know"* choice to prevent guessing, and immediate feedback.
+- **Subagents (`.opencode/agents/` & Antigravity)**:
   - `@researcher`: Fact-checking specialist using web search to prevent AI hallucinations.
   - `@mermaid-maker`: Authors and visually inspects structural/relational diagrams.
   - `@svg-maker`: Authors and visually inspects coordinate-precise geometric and vector SVGs.
@@ -33,22 +33,24 @@ Rather than giving you memorized facts or passive summaries, this system acts as
 ## Setup & Requirements
 
 ### Prerequisites
-1. **[OpenCode](https://opencode.ai)**:
-   ```bash
-   npm i -g @opencode/cli@latest
-   # or via brew:
-   # brew install anomalyco/tap/opencode-v2
-   ```
+1. **Runner of Choice**:
+   - **[OpenCode](https://opencode.ai)**:
+     ```bash
+     npm i -g @opencode/cli@latest
+     # or via brew:
+     # brew install anomalyco/tap/opencode-v2
+     ```
+   - **Antigravity CLI (`agy`)**: Configured via workspace [`GEMINI.md`](GEMINI.md) and [`.gemini/rules/`](.gemini/rules/).
 2. **[Obsidian](https://obsidian.md)** (recommended for reading lesson notes).
 3. **Diagram Renderers** (for visual makers):
    - Chromium-based browser (Google Chrome, Chromium, Vivaldi, Brave, Edge, or Arc).
    - SVG tools: `brew install librsvg imagemagick` (provides `rsvg-convert` and `magick`).
 
 ### Installation
-Clone or copy this repository into your learning workspace:
+Clone this repository into your workspace:
 
 ```bash
-git clone https://github.com/amosblomqvist/learn.git
+git clone https://github.com/ToruOkadaOi/learn.git
 cd learn
 npm install
 ```
@@ -75,6 +77,7 @@ The system dynamically resolves your Obsidian vault in this order of precedence:
 
 ## How to Learn with It
 
+### Option A: Using OpenCode
 1. **Launch OpenCode** in the repository root:
    ```bash
    opencode
@@ -85,9 +88,17 @@ The system dynamically resolves your Obsidian vault in this order of precedence:
    ```
    Open `tcp-ip-foundations.md` in Obsidian in **Live Preview** or **Reading View**.
 3. **Prompt the Agent**:
-   Tell the agent what you want to learn:
    > *"I want to understand how the internet routes packets reliably without losing data."*
-4. **Engage with the Loop**:
-   - Answer the diagnostic questions in OpenCode's interactive modal.
-   - Review and approve the dependency graph plan.
-   - Step through each concept node-by-node with real-time progress updates on the dependency map!
+
+### Option B: Using Antigravity (`agy`)
+1. **Launch `agy`** in the repository root:
+   ```bash
+   agy
+   ```
+2. Antigravity automatically detects [`GEMINI.md`](GEMINI.md) and [`.gemini/rules/`](.gemini/rules/) for anti-spoiler questions and live DAG progress tracking.
+3. Prompt the agent with your topic to start the 3-phase learning session!
+
+### The Learning Loop:
+- Answer diagnostic probes in the interactive question modal (unbiased, zero spoiler labels).
+- Review and approve the dependency DAG plan.
+- Step through each concept node-by-node with real-time visual progress updates on the dependency map!
