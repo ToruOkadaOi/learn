@@ -14,6 +14,7 @@ Rather than giving you memorized facts or passive summaries, this system acts as
   - **Principle 1 — Unconditional truths first:** Locks in caveat-free foundations before building higher concepts.
   - **Principle 2 — Motivated discovery:** Answers *"how could I have discovered this?"* (3Blue1Brown style), moving from tension to formulation.
   - **3-Phase Workflow:** Binary-search **Probe** $\to$ DAG Dependency **Plan** $\to$ Node-by-node **Teach** loop.
+  - **Live Dependency Progress Sync:** Real-time visual tracking on the Mermaid DAG as nodes are mastered (green `[✓]` for done, amber `[▶]` for active).
 - **OpenCode Native Question Modal**:
   - Interactive terminal choices for knowledge probes, diagnostic quizzes, and goal branching.
   - Quizzes feature parallel bare-claim options, an explicit *"I don't know"* button, and immediate feedback.
@@ -89,4 +90,4 @@ The system dynamically resolves your Obsidian vault in this order of precedence:
 4. **Engage with the Loop**:
    - Answer the diagnostic questions in OpenCode's interactive modal.
    - Review and approve the dependency graph plan.
-   - Step through each concept node-by-node as it renders live into Obsidian!
+   - Step through each concept node-by-node with real-time progress updates on the dependency map!
