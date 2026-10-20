@@ -1,6 +1,4 @@
-# learn (OpenCode + Antigravity + Obsidian)
-
-[![video](assets/thumbnail.png)](https://www.youtube.com/watch?v=kzcI5F4tGiU)
+# learn (OpenCode / AGY + Obsidian)
 
 An AI learning system based on the principles from Amos Blomqvist's video [How I Use AI to Learn Things](https://www.youtube.com/watch?v=kzcI5F4tGiU), engineered for **[OpenCode](https://opencode.ai)** and **Google Antigravity (`agy`)** with live **[Obsidian](https://obsidian.md)** note-taking.
 
