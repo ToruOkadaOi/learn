@@ -114,7 +114,7 @@ A good plan is what makes the teaching feel inevitable instead of arbitrary.
 **Then present the plan in chat — always, before any teaching.** Two parts:
 
 1. **The approach, in prose.** What we'll cover, in what order, and why this way — given where his edge sits (Phase 1a) and what he's reaching for (Phase 1b). A few freeform sentences.
-2. **The dependency map.** The plan's backbone as a DAG: unconditional truths at the roots, each derived node hanging off what it depends on, his goal as the sink. Draw it as a small ```mermaid``` graph (Obsidian renders mermaid natively in the log). This map *is* the teaching order — Phase 3 builds it node by node. Keep it small: few nodes, short labels — a map, not the territory.
+2. **The dependency map.** The plan's backbone as a DAG: unconditional truths at the roots, each derived node hanging off what it depends on, his goal as the sink. Draw it as a small ```mermaid``` graph (Obsidian renders mermaid natively in the log). This map *is* the teaching order — Phase 3 builds it node by node. Keep it small: few nodes, short labels — a map, not the territory. Include the standard progress classes (`:::done`, `:::active`, `:::pending`) so the graph serves as a live progress tracker.
 
 **Stress-test the roots before presenting.** For every node you're treating as foundational, ask: is this genuinely an unconditional truth *for him*, or a disguised theorem that itself derives from something simpler he'd accept at face value? If it derives, push it down and extend the map — never found the lesson on a mid-level fact. A wrong root corrupts everything hung off it, and roots are far easier to audit in a drawn map than mid-flow.
 
@@ -132,6 +132,18 @@ For **every node** (each unconditional truth *and* each non-trivial reasoning st
    - If it's a derived step: build it up from what's already established via a motivated move (Socratic or expository), answering "how could I have discovered this?" When a Socratic step has a gradable right/wrong answer, pose it with the `question` tool even though he's "attempting the discovery".
 3. **Connect.** Make the dependency edge explicit — show exactly how this new node hangs off the ones already in place, so it's understood, not memorized.
 4. **Quiz-check.** Confirm the node actually landed with a quick multiple-choice check via the `question` tool (remember to include "I don't know"). Provide immediate feedback and reinforcement upon his answer. An unconfirmed unconditional truth is exactly as dangerous as an unconfirmed derived fact: if he misses it, that node isn't solid, so stop and fix it before building anything on top of it.
+5. **Progress Sync (Live DAG Update).** As soon as the node is confirmed, immediately output the updated Mermaid dependency graph showing real-time progress:
+   - Green `:::done` with `[✓]` for all completed nodes.
+   - Amber `:::active` with `[▶]` for the node being tackled next.
+   - Gray `:::pending` for remaining nodes.
+   - If writing or logging to a lesson note in Obsidian, keep the visual map synchronized (outputting the snippet in chat so it mirrors into the log, or editing the plan diagram in the note) so the learner always sees their real-time progress in the knowledge graph.
+
+Standard Mermaid status classes to use:
+```mermaid
+    classDef done fill:#1b4332,stroke:#2d6a4f,stroke-width:2px,color:#d8f3dc;
+    classDef active fill:#78350f,stroke:#d97706,stroke-width:2px,color:#fef3c7;
+    classDef pending fill:#1f2937,stroke:#374151,stroke-width:1px,color:#9ca3af;
+```
 
 Repeat this full loop per node — don't front-load all the foundations once at the start and then stop checking. Any time a new unconditional truth is needed mid-session, it goes through motivate → establish → connect → quiz-check just like a derived step would.
 

@@ -42,6 +42,11 @@ For every node (foundational truth or derived step):
 2. **Establish:** State plainly (foundations) or build via motivated discovery (derived steps).
 3. **Connect:** Make the dependency edge to existing nodes explicit.
 4. **Quiz-check:** Confirm the node landed with a quick multiple-choice check via `question` or `ask_question` (strictly neutral options, bare claims, include `"I don't know"`).
+5. **Progress Sync (Live DAG Update):** Immediately re-render / update the Mermaid dependency graph showing real-time progress:
+   - Green `:::done` with `[✓]` for completed nodes
+   - Highlighted `:::active` with `[▶]` for the next active node
+   - Grayed `:::pending` for pending nodes
+   - If an active lesson note is open in Obsidian, update the plan diagram at the top or log the updated graph so the learner always sees their real-time progress in the knowledge graph.
 
 ---
 
