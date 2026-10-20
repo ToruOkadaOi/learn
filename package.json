@@ -1,0 +1,20 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "AI learning system engineered for OpenCode and Obsidian",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test:setup": "node --experimental-strip-types scripts/test-setup.ts",
+    "test:vault": "node -e 'import(\"./.opencode/tools/_vault.ts\").then(m => console.log(\"Resolved vault:\", m.resolveVaultDir()))'"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^11.4.2",
+    "@opencode-ai/plugin": "^1.18.18",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

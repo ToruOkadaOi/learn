@@ -1,0 +1,35 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "subagent_depth": 1,
+  "plugins": [
+    "./.opencode/plugins/visual-tools.ts",
+    "./.opencode/plugins/obsidian-logger.ts"
+  ],
+  // Path to your Obsidian vault or subfolder.
+  // Can also be set via the OBSIDIAN_VAULT_PATH environment variable.
+  "obsidianVault": "~/Documents/iVault/Learn",
+  "commands": {
+    "log": {
+      "description": "Start live logging this lesson to an Obsidian markdown note in your vault",
+      "template": "/log $ARGUMENTS"
+    },
+    "unlog": {
+      "description": "Stop live logging to Obsidian",
+      "template": "/unlog"
+    }
+  },
+  "agents": {
+    "researcher": {
+      "mode": "subagent",
+      "description": "Web researcher — searches the web and synthesizes findings to verify facts and scope lesson topics"
+    },
+    "mermaid-maker": {
+      "mode": "subagent",
+      "description": "Authors ONE Mermaid diagram from a brief, renders to PNG, verifies visually, and publishes into vault viz/ folder"
+    },
+    "svg-maker": {
+      "mode": "subagent",
+      "description": "Authors ONE hand-written SVG from a brief, renders to PNG, verifies visually, and publishes into vault viz/ folder"
+    }
+  }
+}
