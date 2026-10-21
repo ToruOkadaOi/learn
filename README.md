@@ -1,6 +1,6 @@
-# learn (OpenCode / AGY + Obsidian)
+# learn (OpenCode / AGY / Codex + Obsidian)
 
-An AI learning system based on the principles from Amos Blomqvist's video [How I Use AI to Learn Things](https://www.youtube.com/watch?v=kzcI5F4tGiU), engineered for **[OpenCode](https://opencode.ai)** and **Google Antigravity (`agy`)** with live **[Obsidian](https://obsidian.md)** note-taking.
+An AI learning system based on the principles from Amos Blomqvist's video [How I Use AI to Learn Things](https://www.youtube.com/watch?v=kzcI5F4tGiU), engineered for **[OpenCode](https://opencode.ai)**, **Google Antigravity (`agy`)**, and **OpenAI Codex CLI (`codex`)** with live **[Obsidian](https://obsidian.md)** note-taking.
 
 Rather than giving you memorized facts or passive summaries, this system acts as a rigorous personal tutor. It maps the frontier of your current understanding, derives new knowledge from unconditional ground truths, and mirrors every lesson live into an Obsidian note with native LaTeX math, callouts, and verified diagrams.
 
@@ -95,6 +95,14 @@ The system dynamically resolves your Obsidian vault in this order of precedence:
    ```
 2. Antigravity automatically detects [`GEMINI.md`](GEMINI.md) and [`.gemini/rules/`](.gemini/rules/) for anti-spoiler questions and live DAG progress tracking.
 3. Prompt the agent with your topic to start the 3-phase learning session!
+
+### Option C: Using Codex CLI (`codex`)
+1. **Launch `codex`** in the repository root:
+   ```bash
+   codex
+   ```
+2. Codex automatically detects and loads [`AGENTS.md`](AGENTS.md) at startup for pedagogical guidelines, neutral bare-claim quizzes, and live Mermaid DAG progress tracking.
+3. Prompt Codex to learn any subject (e.g. `Teach me public-key cryptography from first principles and log to ~/Documents/iVault/Learn/rsa.md`).
 
 ### The Learning Loop:
 - Answer diagnostic probes in the interactive question modal (unbiased, zero spoiler labels).
